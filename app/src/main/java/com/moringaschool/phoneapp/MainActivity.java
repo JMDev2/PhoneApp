@@ -1,6 +1,7 @@
 package com.moringaschool.phoneapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FragmentManager fm = getSupportFragmentManager();
+                DialogFragment dialogFragment = new DialogFragment();
+                dialogFragment.show(fm, "Sample Fragment");
 
                 String name = mtextInputEditText.getText().toString();
 
@@ -54,5 +58,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+
 
 }
