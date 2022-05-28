@@ -47,6 +47,7 @@ public class Products extends AppCompatActivity {
             }
         });
 
+        //contact us navigation
         mImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
