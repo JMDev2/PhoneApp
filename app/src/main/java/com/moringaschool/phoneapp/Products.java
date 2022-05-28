@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +21,8 @@ public class Products extends AppCompatActivity {
     @BindView(R.id.editTextTextPersonName) EditText mName;
     @BindView(R.id.productListView) ListView mListView;
     @BindView(R.id.hyperlinkTextView) TextView mLink;
+    @BindView(R.id.contactUs)
+    ImageButton mImageButton;
 
     private String[] phones = new String[] {"Sumsung", "Tecno","Nokia", "Itel","Xiaomi","Iphone","Sony","Huawei","others"};
 
@@ -44,15 +47,22 @@ public class Products extends AppCompatActivity {
             }
         });
 
+        mImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(Products.this, aboutus.class);
+                startActivity(intent1);
+            }
+        });
+
 
         //Fetching user input from the MainActivity
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         mName.setText("Welcome " +name+ "!");
-        
 
-        Intent intent1 = new Intent(Products.this, aboutus.class);
-        startActivity(intent1);
+
+
     }
 
     //creting a hyperlink to link to external website
