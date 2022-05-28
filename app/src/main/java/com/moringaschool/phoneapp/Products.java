@@ -49,6 +49,10 @@ public class Products extends AppCompatActivity {
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         mName.setText("Welcome " +name+ "!");
+        
+
+        Intent intent1 = new Intent(Products.this, aboutus.class);
+        startActivity(intent1);
     }
 
     //creting a hyperlink to link to external website
