@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">PhoneApp</string>
     <string name="name">Enter Your Name</string>
+    <string name="hyperlink"><a href="https://moringaschool.instructure.com/courses/651/pages/monday-butterknife?module_item_id=58638">Visit Our Website</a></string>
 </resources>

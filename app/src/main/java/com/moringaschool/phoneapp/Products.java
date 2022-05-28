@@ -4,14 +4,21 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class Products extends AppCompatActivity {
-    @BindView(R.id.editTextTextPersonName)
-    EditText mName;
+    @BindView(R.id.editTextTextPersonName) EditText mName;
+    @BindView(R.id.productListView) ListView mListView;
+    @BindView(R.id.hyperlinkTextView) TextView mLink;
+
+    private String[] phones = new String[] {"Sumsung", "Tecno","Nokia"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +26,23 @@ public class Products extends AppCompatActivity {
         setContentView(R.layout.activity_products);
 
         ButterKnife.bind(this);
+        //Initializing Array adapter
+        ArrayAdapter adapter = new ArrayAdapter( this, android.R.layout.simple_list_item_1,phones);
+        mListView.setAdapter(adapter);
+        setupHyperlink();// calling the hyperlink method
 
+
+        //hyperlink
+
+
+        //Fetching user input from the MainActivity
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         mName.setText("Welcome " +name+ "!");
+    }
+
+    //creting a hyperlink to link to external website
+    private void setupHyperlink(){
+       mLink.setMovementMethod(LinkMovementMethod.getInstance());
     }
 }
