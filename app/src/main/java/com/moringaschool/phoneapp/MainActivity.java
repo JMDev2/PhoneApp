@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.textInputEditText)
     EditText mtextInputEditText;
 
+    boolean isAllFieldsChecked = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,14 +29,30 @@ public class MainActivity extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String name = mtextInputEditText.getText().toString();
-                Intent intent = new Intent(MainActivity.this, Products.class);
-                intent.putExtra("name", name);
-                startActivity(intent);
+
+                //validating the user input
+                isAllFieldsChecked = CheckAllFields();
+                if (isAllFieldsChecked) {
+                    Intent intent = new Intent(MainActivity.this, Products.class);
+                    intent.putExtra("name", name);
+                    startActivity(intent);
+                }
+
+//                Intent intent = new Intent(MainActivity.this, Products.class);
+//                intent.putExtra("name", name);
+//                startActivity(intent);
             }
         });
-
-
-
     }
+
+    private boolean CheckAllFields() {
+        if (mtextInputEditText.length() == 0) {
+            mtextInputEditText.setError("This field is required");
+            return false;
+        }
+        return true;
+    }
+
 }
