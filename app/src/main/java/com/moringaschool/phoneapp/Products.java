@@ -1,6 +1,7 @@
 package com.moringaschool.phoneapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,6 +31,11 @@ public class Products extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_products);
+
+        //adding a builder dialogue
+        FragmentManager fm = getSupportFragmentManager();
+        DialogFragment dialogFragment = new DialogFragment();
+        dialogFragment.show(fm, "Sample Fragment");
 
         ButterKnife.bind(this);
         setupHyperlink();// calling the hyperlink method

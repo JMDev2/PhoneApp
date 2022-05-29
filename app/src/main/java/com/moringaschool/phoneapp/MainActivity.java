@@ -30,11 +30,7 @@ public class MainActivity extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentManager fm = getSupportFragmentManager();
-                DialogFragment dialogFragment = new DialogFragment();
-                dialogFragment.show(fm, "Sample Fragment");
-
-                String name = mtextInputEditText.getText().toString();
+                 String name = mtextInputEditText.getText().toString();
 
                 //validating the user input
                 isAllFieldsChecked = CheckAllFields();
@@ -44,9 +40,6 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
 
-//                Intent intent = new Intent(MainActivity.this, Products.class);
-//                intent.putExtra("name", name);
-//                startActivity(intent);
             }
         });
     }
