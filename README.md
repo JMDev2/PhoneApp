@@ -1,105 +1,57 @@
-# News Api
+# PhoneApp
 
 #### By **[JOSEPH MAINA](https://github.com/JOSEPHMAINA1995)**
 
 ## Description
 
-This is an API for querying and retrieving news and information. It contains news/articles/posts that are available to all employees without navigating into any department, and others that are housed/classified within departments. To Post and Get all the detils we are using postman application.
+PhoneApp is a simple mobile application that lists various types of mobile devices that are available for sale to the customers. It also provides for a navigation link to the website that users are able to explore more to chck for specefications, prizes and warranty.
 
 ## Setup/Installation Requirements
 
 - Make sure you have stable internet connection- Wifi or Cellular. Connect using your Mobile phone or Computer.
 - To access the application, form the repository by clicking the form button. Go ahead to clone it on your local machine.
 - use git clone command followed by the link: 
-* git clone https://github.com/JOSEPHMAINA1995/News-API.git
-- After succesfully cloning, open the application on Intellij
-- Downlaod postman **[postman(https://www.postman.com/downloads/)** follow the instructions given on the site.
+* git clone https://github.com/JOSEPHMAINA1995/PhoneApp.git
+- After succesfully cloning, open the application using the android studio
 
-## Database Set Up
- 
- * Type in psql
-* CREATE DATABASE newsapi;
-* \c newsapi;
 
-* CREATE TABLE users(
- id serial PRIMARY KEY,
- name varchar,
- position varchar,
- departmentid int,
- role varchar
- );
+## Prerequisite
+* Android studio (Latest Version)
+* Emulator or an android mobile device
+* JDK	
+	
+## CFeatures
 
-* CREATE TABLE generalnews(
-id serial PRIMARY KEY,
- title varchar,
- content varchar,
- departmentid int
- );
-*  CREATE TABLE departmentnews(
- did serial PRIMARY KEY,
-  title varchar,
-  content varchar,
-  departmentid int
-  );
-
-* CREATE TABLE departments(
-id serial PRIMARY KEY,
-name varchar,
-description varchar,
-employees varchar
-);
-* CREATE TABLE user_department(
-id SERIAL PRIMARY KEY,
-userid int,
-departmentid int
-);
-
-* CREATE DATABASE newsapi_test WITH TEMPLATE newsapi;
-
-## Contribution
-You may also want to contribute to enhance a functionality:
-* Fork the repository to your github account
-* Create a new branch (git switch -c ft-development)
-* Make the changes you intend
-* Add changes to reflect the changes made
-* Commit your changes (git commit -m 'additional info')
-* Push to the branch (git push origin ft-develop)
-* Create a Pull Request.
+* Authenticating the Location
+* ListView
+* About Us and the contacts
 
 
 ## Behavior Driven Development(BDD)
 
-The user is able to.
-
-* Open the Application on InteliJ IDE (most preffered).
-
-* Copy the routes provided ie post("/departments/new") and paste it on post man. Create the OBject. select body then raw. In the space provided add your object {
-    "title":"james",
-    "content":"male",
-    "departmentid":10
-}
-Click on send to post the data.
-
-* To retrieve the data. copy the get route, paset it on post man and send.
-
-* Reapeat the same to all the routing provided.
+The user is able to install the Application in their mobile phone
+The user is able to enter their names then proceed to the next view
+The User is able to select the phone they want, proceed to the website for further exploration.
+The user is able to make enquiries through our contacts on the about us page.
 
 
 ## Technologies Used
 
-* Java - source language.
+* android studio
 
 * Gradle for dependency management and running tasks.
 
-* Bootstrap.
+* Java for Backend
 
-* Maven
+* XML for designing the frontend
 
-* Cascading Style Sheets.
+
  
-### LiveLink 
+## Testing
+* Instrumentation Testing
 
-N/A
+* Robolectric Testing
+
 
 ### License
 
