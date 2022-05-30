@@ -3,6 +3,7 @@ package com.moringaschool.phoneapp;
 import static org.junit.Assert.assertEquals;
 
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -27,8 +28,8 @@ public class ProductsTest {
     }
     @Test
     public  void userInput(){
-        TextInputLayout textInputLayout = products.findViewById(R.id.editTextTextPersonName);
-        assertEquals("name", textInputLayout.getEditText().getHint());
+        EditText editText = products.findViewById(R.id.editTextTextPersonName);
+        assertEquals("name", editText.getHint());
 
     }
     @Test
