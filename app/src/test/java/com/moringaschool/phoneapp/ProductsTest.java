@@ -1,9 +1,11 @@
 package com.moringaschool.phoneapp;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -34,8 +36,8 @@ public class ProductsTest {
     }
     @Test
     public void validateButton(){
-        Button button = products.findViewById(R.id.contactUs);
-        assertEquals("contactUs", button.getId());
+        ImageButton button = products.findViewById(R.id.contactUs);
+        assertNotNull(button);
 
     }
 }
