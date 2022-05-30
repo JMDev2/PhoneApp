@@ -10,8 +10,11 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
+import org.robolectric.RobolectricTestRunner;
 
+@RunWith(RobolectricTestRunner.class)
 public class MainActivityTest {
     private MainActivity mainActivity;
 
@@ -27,7 +30,7 @@ public class MainActivityTest {
     @Test
     public  void userInput(){
         TextInputLayout textInputLayout = mainActivity.findViewById(R.id.textInputEditText);
-        assertEquals("name", textInputLayout.getHint());
+        assertEquals("Enter Your Name", textInputLayout.getEditText().getHint());
 
     }
     @Test
